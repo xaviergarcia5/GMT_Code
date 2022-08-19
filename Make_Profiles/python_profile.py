@@ -15,12 +15,14 @@ def plot_with_dots(data_file, model_file, outname, data_label, model_label):
 	zm=np.multiply(zm, 100) #unit cnversion into cm
 	plt.plot(pd, zd, marker='.', color='black', linewidth=0, label=data_label);
 	plt.plot(pm, zm, marker='.', color='orange', linewidth=0, label=model_label);
-	plt.xlabel('Distance (km)');
-	plt.ylabel('LOS (cm)');
+	plt.xlabel('Distance (km)', fontdict=font1);
+	plt.ylabel('LOS (cm)', fontdict=font1);
 	plt.legend();
 	plt.grid(True);
 	plt.savefig(outname);
 	return;
+
+font1 = {'family':'serif','color':'black','size':15}
 
 if __name__ == "__main__":
 	asc_data_file = "ascending_profile.txt"
